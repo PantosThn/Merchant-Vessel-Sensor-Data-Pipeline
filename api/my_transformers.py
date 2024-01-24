@@ -5,7 +5,7 @@ from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.impute import SimpleImputer
 from api.logging.logger import logger
 
-class NameDropper(BaseEstimator, TransformerMixin):
+class ColumnDropper(BaseEstimator, TransformerMixin):
     def __init__(self, columns_to_keep):
         self.columns_to_keep = columns_to_keep
 
@@ -13,9 +13,9 @@ class NameDropper(BaseEstimator, TransformerMixin):
         return self
 
     def transform(self, X):
-        logger.info(f"Number of columns before NameDropper: {X.shape[1]}")
+        logger.info(f"Number of columns before ColumnDropper: {X.shape[1]}")
         X_dropped = X[self.columns_to_keep]
-        logger.info(f"Number of columns after NameDropper: {X_dropped.shape[1]}")
+        logger.info(f"Number of columns after ColumnDropper: {X_dropped.shape[1]}")
         return X_dropped
     
 class LatLongDropper(BaseEstimator, TransformerMixin):
