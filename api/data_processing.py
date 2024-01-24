@@ -1,5 +1,5 @@
 from api.my_transformers import (
-    NameDropper, LatLongDropper, OnLandAssigner,
+    ColumnDropper, LatLongDropper, OnLandAssigner,
     SeaCurrentsCalculator, SimpleImputer, DropNATransformer
 )
 from api.pydantic_validators import (
@@ -8,7 +8,7 @@ from api.pydantic_validators import (
 from sklearn.pipeline import Pipeline
 
 def create_pipeline(columns_to_keep):
-    name_dropper = NameDropper(columns_to_keep=columns_to_keep)
+    column_dropper = ColumnDropper(columns_to_keep=columns_to_keep)
     lat_long_dropper = LatLongDropper()
     on_land_assigner = OnLandAssigner()
     sea_currents_calculator = SeaCurrentsCalculator()
@@ -17,7 +17,7 @@ def create_pipeline(columns_to_keep):
 
     # Define the pipeline
     pipeline = Pipeline([
-        ('name_dropper', name_dropper),
+        ('name_dropper', column_dropper),
         ('lat_long_dropper', lat_long_dropper),
         ('on_land_assigner', on_land_assigner),
         ('sea_currents_calculator', sea_currents_calculator),
