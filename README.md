@@ -1,7 +1,7 @@
 
 ## About
 
-Created a simple pipeline via FastAPI that performs the following tasks:
+Created a simple pipeline via FastAPI that performs the following actions:
   - Keeps only relevant columns
   - Removes entries with missing latitude and longitude coordinates
   - Determines if AIS points are considered land or not and filters out land points
