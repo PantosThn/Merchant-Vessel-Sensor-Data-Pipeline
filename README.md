@@ -9,6 +9,8 @@ Created a simple pipeline via FastAPI that performs the following actions:
   - Drops any remaining NaN values
   - Validates the data using Pydantic
 
+Please take a look at my EDA.ipynb as well as my word document in the e-mail for how I concluded to those actions.
+
 ## Usage
 
 To run the main function, follow these steps:
