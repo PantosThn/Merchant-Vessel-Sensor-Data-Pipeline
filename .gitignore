@@ -1,0 +1,31 @@
+# Python-specific ignores
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Editor-specific files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Dependency directories
+venv/
+env/
+node_modules/
+
+# Compiled files
+*.pyc
+
+# Python env
+__pycache__/
+
+# Ignore all files in the root except .gitignore
+/*
+!.gitignore
+
+# Include CSV files
+!/*.csv
