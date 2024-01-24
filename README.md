@@ -22,7 +22,12 @@ To run the main function, follow these steps:
    ```bash
    docker-compose up --build
 
-1. **Send requests:**
-```bash
-   curl -X POST -F "file=@/path/to/your/file.csv" http://127.0.0.1:8000/uploadfile/
+2. **Set csv filepath:**
 
+   ```bash
+   FILE_PATH="{your path}"
+   ```
+3. **Send requests:**
+    ```bash
+   curl -X POST -F "file=@$FILE_PATH" http://127.0.0.1:8000/uploadfile/
+    ```
