@@ -5,14 +5,11 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
-# Get the log file path from the environment variable, default to 'logs/app.log'
-log_file_path_env = os.getenv('LOG_FILE_PATH', 'logs/app.log')
+host_data_path = os.getenv('HOST_DATA_PATH', 'logs/app.log')
 
-# Get the directory of the interpreter
-interpreter_dir = os.path.dirname(os.path.abspath(__file__))
+log_file_path = os.path.join(host_data_path, 'api/logs/app.log')
 
-# Create the log file path based on the interpreter's directory
-log_file_path = os.path.join(interpreter_dir, log_file_path_env)
+os.makedirs(os.path.dirname(log_file_path), exist_ok=True)
 
 # Ensure the directory for the log file exists
 log_directory = os.path.dirname(log_file_path)
@@ -30,6 +27,3 @@ logging.basicConfig(
 
 # Create a logger
 logger = logging.getLogger(__name__)
-
-# Test log message
-logger.info("Logging test message")

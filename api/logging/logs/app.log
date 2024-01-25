@@ -1,7 +1,0 @@
-2024-01-24 17:27:17,359 - INFO - Logging test message
-2024-01-24 17:27:32,416 - INFO - Number of columns before NameDropper: 13
-2024-01-24 17:27:32,416 - INFO - Number of columns after NameDropper: 12
-2024-01-24 17:27:32,416 - INFO - Shape before LatLongDropper: (23199, 12)
-2024-01-24 17:27:32,431 - INFO - Shape after LatLongDropper: (20600, 12)
-2024-01-24 17:27:32,431 - INFO - Percentage of dropped observations: 11.2%
-2024-01-24 17:27:38,153 - INFO - Pydantic tests have been passed successfully.

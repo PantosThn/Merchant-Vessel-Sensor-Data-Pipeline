@@ -8,6 +8,8 @@ import os
 
 app = FastAPI()
 
+host_data_path = os.getenv('HOST_DATA_PATH', 'app/data')
+
 @app.get("/")
 def read_root():
     return {"message": "Hello, FastAPI!"}
@@ -18,6 +20,9 @@ async def create_upload_file(file: UploadFile = File(...)):
         # Read the content of the uploaded file as a pandas DataFrame
         content = await file.read()
         raw_df = pd.read_csv(io.StringIO(content.decode('utf-8')))
+
+        folder_path = "/app/data/created_folder"
+        os.makedirs(folder_path, exist_ok=True)
         
         # Apply pipeline to the raw DataFrame
         columns_to_keep = ['latitude', 'longitude', 'datetime', 'speed_overground',
@@ -27,17 +32,10 @@ async def create_upload_file(file: UploadFile = File(...)):
         pipeline = create_pipeline(columns_to_keep)
         df_transformed = pipeline.fit_transform(raw_df)
 
-        # Specify the path to the processed data directory
-        processed_data_dir = os.path.join(os.path.dirname(__file__), "data", "processed")
-
-        # Make sure the directory exists, create it if necessary
-        os.makedirs(processed_data_dir, exist_ok=True)
-
-        # Specify the path to the transformed CSV file within the processed data directory
-        transformed_csv_path = os.path.join(processed_data_dir, "transformed_output.csv")
-
-        # Save the DataFrame to the CSV file
-        df_transformed.to_csv(transformed_csv_path, index=False)
+        transformed_csv_path = os.path.join(host_data_path, 'data', 'processed')
+        os.makedirs(transformed_csv_path, exist_ok=True)
+        
+        df_transformed.to_csv(os.path.join(transformed_csv_path, 'transformed_file.csv'), index=False)
 
         # Return a message with the saved file path
         return {"message": "File saved successfully", "file_path": transformed_csv_path}

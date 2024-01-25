@@ -5,3 +5,6 @@ docker load -i ds_challenge-web.tar
 docker run -p 8001:8000 ds_challenge-web
 
 curl -X POST -F "file=@/C:\Users\thanos\Desktop\ds_challenge\data\raw\DBdataset.csv" http://127.0.0.1:8001/uploadfile/
+
+
+set HOST_DATA_PATH="C:\Users\thanos\ds-challenge"
