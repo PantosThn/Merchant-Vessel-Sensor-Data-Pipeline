@@ -25,7 +25,7 @@ To run the main function, follow these steps:
 2. **Set csv filepath:**
 
    ```bash
-   FILE_PATH="{your path}"
+   FILE_PATH="{your path}" # raw csv of data path
    HOST_DATA_PATH="{folder for volumes}" #eg C:/Users/thanos/ds-challenge
    ```
 3. **Send requests:**
