@@ -15,19 +15,21 @@ Please take a look at my EDA.ipynb as well as my word document in the e-mail for
 
 To run the main function, follow these steps:
 
-1. **Launch FastAPI Server:**
+1. **Set csv filepath:**
+
+   ```bash
+   FILE_PATH="{your path}"  #eg FILE_PATH='C:\Users\thanos\ds-challenge-1\data\raw\DBdataset.csv'
+   ```
+   ```bash
+   export HOST_DATA_PATH="{folder for volumes}" #eg export HOST_DATA_PATH="/c/Users/thanos/ds-challenge-1"
+
+2. **Launch FastAPI Server:**
 
    Use Docker Compose to build and run the Docker containers:
 
    ```bash
    docker-compose up --build
 
-2. **Set csv filepath:**
-
-   ```bash
-   FILE_PATH="{your path}" # raw csv of data path
-   HOST_DATA_PATH="{folder for volumes}" #eg C:/Users/thanos/ds-challenge
-   ```
 3. **Send requests:**
     ```bash
    curl -X POST -F "file=@$FILE_PATH" http://127.0.0.1:8000/uploadfile/
