@@ -26,6 +26,7 @@ To run the main function, follow these steps:
 
    ```bash
    FILE_PATH="{your path}"
+   HOST_DATA_PATH="{folder for volumes}" #eg C:/Users/thanos/ds-challenge
    ```
 3. **Send requests:**
     ```bash
