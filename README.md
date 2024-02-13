@@ -11,13 +11,8 @@ Created a simple pipeline via FastAPI that performs the following actions:
 
 ## Before and After Cleaning
 
-Before cleaning:
 
-![Before Cleaning](https://ibb.co/QNDd4Wm)
-
-After cleaning:
-
-![After Cleaning](https://ibb.co/PmJxN9Y)
+<img src="https://i.ibb.co/mDdJGXB/voyage-before.png" alt="Before Cleaning" width="375" style="float: left; margin-right: 10px;"> <img src="https://i.ibb.co/d2mgRNK/voyage-after-cleaning.png" alt="After Cleaning" width="400" style="float: left; margin-right: 10px;">
 
 
 ## Usage
