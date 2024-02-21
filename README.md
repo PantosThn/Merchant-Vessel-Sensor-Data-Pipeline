@@ -4,8 +4,6 @@ This repository contains a comprehensive data pipeline designed for cleaning and
 
 Additionally, a bonus feature of this project is the dockerization of the environment, which allows for easy deployment of the pipeline. The Docker image encapsulates all the required components and dependencies, providing a containerized environment with an endpoint for interacting with the pipeline.
 
-The repository also includes detailed documentation, scripts, and a PDF report analyzing the approach, results, and plots generated from the data analysis. Contributors are welcome to fork, modify, and contribute to this project.
-
 ## Pipeline for AIS Data Processing
 
 Created a simple pipeline via FastAPI that performs the following actions:
